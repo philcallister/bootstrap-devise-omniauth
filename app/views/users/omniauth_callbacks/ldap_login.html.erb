@@ -1,0 +1,6 @@
+<h2>LDAP Sign in</h2>
+<%= simple_form_for @user, :url => '/users/auth/ldap/callback', :html => {:class => 'form-vertical', :noValidate => 'noValidate' } do |f| %>
+  <%= f.input :name, :autofocus => true, :input_html => { :name => 'username' } %>
+  <%= f.input :password, :input_html => { :name => 'password' } %>
+  <%= f.button :submit, "Sign in", :class => 'btn-primary' %>
+<% end %>

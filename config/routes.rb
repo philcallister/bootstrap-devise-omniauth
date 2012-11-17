@@ -8,10 +8,11 @@ DeviceBootstrap::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
     match "/users/auth/:provider/callback" => "users/omniauth_callbacks#create"
+    match "/users/auth/ldap/login" => 'users/omniauth_callbacks#ldap_login'
   end
 
   resources :users
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
