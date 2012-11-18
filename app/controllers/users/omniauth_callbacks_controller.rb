@@ -5,11 +5,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
-    # @@@@@ TODO: 2 redirects here, so we're losing the flash.
-    # This redirect is handled by RACK, so we don't have the 
-    # flash available.
     flash[:error] = "LDAP Login failed"
-    redirect_to user_omniauth_authorize_path(:LDAP)
+    redirect_to users_auth_ldap_login_path
   end
 
   def ldap_login
