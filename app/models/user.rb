@@ -23,6 +23,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
   def self.find_for_ldap_oauth(auth)
+
+    puts(">>>>> #{auth.to_json}")
+    
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
       user = User.create(name:auth.info.name,

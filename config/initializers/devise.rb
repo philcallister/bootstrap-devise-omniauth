@@ -207,13 +207,31 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   require "omniauth-ldap"
+  #config.omniauth :LDAP,
+  #  :title => "LDAP Login",
+  #  :host => '127.0.0.1',
+  #  :port => 3890,
+  #  :method => :plain,
+  #  :base => 'dc=ironsafe, dc=com',
+  #  :uid => 'uid'
   config.omniauth :LDAP,
-    :title => "LDAP Login",
-    :host => '127.0.0.1',
-    :port => 3890,
+    #:title => "LDAP Login",
+    #:host => '192.168.0.13',
+    #:port => 389,
+    #:method => :plain,
+    #:base => 'OU=Users,OU=Accounts,DC=lab,DC=local',
+    #:uid => 'sAMAccountName', # Active Directory
+    #:bind_dn => 'Administrator', # Active Directory User
+    #:password => '1234qwer!@' # Active Directory Password
+
+    :title => "LDAP Login", 
+    :host => 'DC01',
+    :port => 389,
     :method => :plain,
-    :base => 'dc=ironsafe, dc=com',
-    :uid => 'uid'
+    :base => 'dc=lab, dc=local',
+    :uid => 'sAMAccountName',
+    :bind_dn => 'LAB\Administrator',
+    :password => '1234qwer!@'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
