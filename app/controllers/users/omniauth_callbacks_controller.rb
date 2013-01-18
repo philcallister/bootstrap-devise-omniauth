@@ -1,3 +1,4 @@
+# ***** IS_TAG *****
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def passthru

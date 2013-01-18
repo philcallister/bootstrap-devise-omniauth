@@ -206,6 +206,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
+
+  # ***** IS_TAG *****
   require "omniauth-ldap"
   #config.omniauth :LDAP,
   #  :title => "LDAP Login",
@@ -231,7 +233,7 @@ Devise.setup do |config|
     :base => 'dc=lab, dc=local',
     :uid => 'sAMAccountName',
     :bind_dn => 'LAB\Administrator',
-    :password => '1234qwer!@'
+    :password => 'xxxxxxxx'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

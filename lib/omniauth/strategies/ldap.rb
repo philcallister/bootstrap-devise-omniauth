@@ -1,3 +1,5 @@
+# ***** IS_TAG *****
+
 ## Monkeypatch for Omniauth LDAP Strategy
 
 module OmniAuth

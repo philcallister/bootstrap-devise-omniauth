@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   # :database_authenticatable
   devise :database_authenticatable,
-         :omniauthable,
+         :omniauthable, # ***** IS_TAG *****
          :registerable,
          :recoverable,
          :rememberable,
@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
+  # ***** IS_TAG *****
   def self.find_for_ldap_oauth(auth)
 
     puts(">>>>> #{auth.to_json}")
